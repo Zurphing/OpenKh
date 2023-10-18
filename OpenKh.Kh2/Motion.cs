@@ -637,18 +637,19 @@ namespace OpenKh.Kh2
 
         public partial class ExpressionNode
         {
-            [Data] public int Data { get; set; }
+            [Data] public short ExpressionType { get; set; }
+            [Data] public short ExpressionId { get; set; }
             [Data] public float Value { get; set; }
             [Data] public short CAR { get; set; }
             [Data] public short CDR { get; set; }
-            public int type { get { return (int)(Data & 0xF000); } set { Data = (int)(((Data - type) + (value & 0xF000))); } }  // ENUM
+            public short type { get { return (short)(ExpressionType & 0xF000); } set { ExpressionType = (short)(((ExpressionType - type) + (value & 0xF000))); } }  // ENUM
             /*
              * NOT WORTH PARSING
-             * DATA:
+             * EXPRESSIONTYPE:
              * type 8b
              * isGlobal 1b
              * reserved 7b
-             * element 16b
+             * element 16b (this has been split; is now ExpressionID)
              */
         }
 
