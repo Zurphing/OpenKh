@@ -59,20 +59,20 @@ namespace OpenKh.Kh2
         {
             public int Element
             {
-                get => (int)BitsUtil.Int.GetBits(Data, 0, 16);
-                set => Data = (int)BitsUtil.Int.SetBits((int)Data, 0, 16, (int)value);
+                get => (short)BitsUtil.Int.GetBits(ExpressionType, 0, 16);
+                set => ExpressionId = (short)BitsUtil.Int.SetBits((short)ExpressionType, 0, 16, (int)value);
             }
             
             public byte Type
             {
-                get => (byte)BitsUtil.Int.GetBits(Data, 24, 8);
-                set => Data = (int)BitsUtil.Int.SetBits((int)Data, 24, 8, (int)value);
+                get => (byte)BitsUtil.Int.GetBits(ExpressionType, 24, 8);
+                set => ExpressionType = (short)BitsUtil.Int.SetBits((short)ExpressionType, 24, 8, (short)value);
             }
             
             public bool IsGlobal
             {
-                get => BitsUtil.Int.GetBit(Data, 23);
-                set => Data = (int)BitsUtil.Int.SetBit((int)Data, 23, value);
+                get => BitsUtil.Int.GetBit(ExpressionType, 23);
+                set => ExpressionType = (short)BitsUtil.Int.SetBit((short)ExpressionType, 23, value);
             }
             
         }
