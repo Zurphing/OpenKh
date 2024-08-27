@@ -202,7 +202,7 @@ There is a total of 30 operation codes for the spawn script. The parser can be f
 - 05: [AllocEnemy](#allocenemy)
 - 06: [unknown](#unknown06)
 - 07: [unknown](#unknown07)
-- 09: [unknown](#unknown09)
+- 09: [SpawnAlt](#spawnalt)
 - 0a: [MapScript](#mapscript)
 - 0b: [BarrierFlag](#barrierflag)
 - 0c: [AreaSettings](#areasettings)
@@ -287,7 +287,7 @@ May be related to only enabling certain spawns through MapScript AI. In wi00, it
 
 Used to execute the bdx (AI) subfile within the ARD. The argument defines the index of the subfile to be used.
 
-#### Barrier
+#### BarrierFlag
 
 Set the memory area `0034ecc8`, which seems to define which parts of the map are blocked by an invisible barrier. It might be related on enabling or disabling certain collisions of a map file. Found 203 times and only in `map`.
 
