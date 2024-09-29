@@ -84,6 +84,11 @@ namespace OpenKh.Command.MapGen.Models
         public byte ground { get; set; }
 
         /// <summary>
+        /// Group value for Collision. Used with MapVisibility to turn on/off map meshes and collision.
+        /// </summary>
+        public byte group { get; set; }
+
+        /// <summary>
         /// FloorLevel value in collision
         /// </summary>
         public byte floorLevel { get; set; }
