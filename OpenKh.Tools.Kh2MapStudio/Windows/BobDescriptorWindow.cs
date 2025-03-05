@@ -68,22 +68,22 @@ namespace OpenKh.Tools.Kh2MapStudio.Windows
                             desc.ScalingZ = x.Z;
                         }, 0.01f);
 
-                    ForEdit("Unk28", () => desc.Unknown28, x => desc.Unknown28 = x);
-                    ForEdit("Unk2c", () => desc.Unknown2c, x => desc.Unknown2c = x);
-                    ForEdit("Unk30", () => desc.Unknown30, x => desc.Unknown30 = x);
-                    ForEdit("Unk34", () => desc.Unknown34, x => desc.Unknown34 = x);
-                    ForEdit("Unk38", () => desc.Unknown38, x => desc.Unknown38 = x);
-                    ForEdit("Unk3c", () => desc.Unknown3c, x => desc.Unknown3c = x);
-                    ForEdit("Unk40", () => desc.Unknown40, x => desc.Unknown40 = x);
-                    ForEdit("Unk44", () => desc.Unknown44, x => desc.Unknown44 = x);
-                    ForEdit("Unk48", () => desc.Unknown48, x => desc.Unknown48 = x);
-                    ForEdit("Unk4c", () => desc.Unknown4c, x => desc.Unknown4c = x);
-                    ForEdit("Unk50", () => desc.Unknown50, x => desc.Unknown50 = x);
-                    ForEdit("Unk54", () => desc.Unknown54, x => desc.Unknown54 = x);
-                    ForEdit("Unk58", () => desc.Unknown58, x => desc.Unknown58 = x);
-                    ForEdit("Unk5c", () => desc.Unknown5c, x => desc.Unknown5c = x);
-                    ForEdit("Unk60", () => desc.Unknown60, x => desc.Unknown60 = x);
-                    ForEdit("Unk64", () => desc.Unknown64, x => desc.Unknown64 = x);
+                    ForEdit("Group Number", () => desc.Unknown28, x => desc.Unknown28 = x);
+                    ForEdit("Motion Index", () => desc.Unknown2c, x => desc.Unknown2c = x);
+                    ForEdit("Motion Offset", () => desc.Unknown30, x => desc.Unknown30 = x);
+                    ForEdit("Flag", () => desc.Unknown34, x => desc.Unknown34 = x);
+                    ForEdit("Model H Upper", () => desc.Unknown38, x => desc.Unknown38 = x);
+                    ForEdit("Model H Lower", () => desc.Unknown3c, x => desc.Unknown3c = x);
+                    ForEdit("Model M Upper", () => desc.Unknown40, x => desc.Unknown40 = x);
+                    ForEdit("Model M Lower", () => desc.Unknown44, x => desc.Unknown44 = x);
+                    ForEdit("Model L Upper", () => desc.Unknown48, x => desc.Unknown48 = x);
+                    ForEdit("Model L Lower", () => desc.Unknown4c, x => desc.Unknown4c = x);
+                    ForEdit("Parts H Upper", () => desc.Unknown50, x => desc.Unknown50 = x);
+                    ForEdit("Parts H Lower", () => desc.Unknown54, x => desc.Unknown54 = x);
+                    ForEdit("Parts M Upper", () => desc.Unknown58, x => desc.Unknown58 = x);
+                    ForEdit("Parts M Lower", () => desc.Unknown5c, x => desc.Unknown5c = x);
+                    ForEdit("Parts L Upper", () => desc.Unknown60, x => desc.Unknown60 = x);
+                    ForEdit("Parts L Lower", () => desc.Unknown64, x => desc.Unknown64 = x);
                 }
                 ImGui.PopID();
                 ImGui.Unindent(20.0f);
