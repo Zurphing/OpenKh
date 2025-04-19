@@ -14,25 +14,31 @@ This document will focus on teaching you how to create mods using the OpenKH Mod
     * [kh2msg](#kh2msg-kh2---replaces-text-found-within-a-kh2-messages-file-uses-a-yaml-file-as-an-source)
     * [areadatascript](#areadatascript-kh2---modifies-a-series-programs-found-within-a-kh2-spawnscript-subfile-located-within-ard-files-using-the-text-format-created-by-openkhcommandspawnscript-you-can-only-provide-a-subset-of-the-programs-found-within-the-spawnscript-the-others-will-be-taken-from-the-original-file)
     * [areadataspawn](#areadataspawn-kh2---modifies-a-kh2-spawnpoint-subfile-located-within-ard-files-using-an-yaml-file-created-using-openkhcommandspawnscript)
+    * [synthpatch](#synthpatch-kh2---can-modify-the-following-different-types-of-synth-binaries-found-within-mixdata)
+        * [reci](#reci-source-example)
+        * [leve](#leve-source-example)
+        * [cond](#cond-source-example)
     * [listpatch](#listpatch-kh2---can-modify-the-following-different-types-of-list-binaries-found-within-kh2)
-      * [trsr](#trsr-source-example)
-      * [cmd](#cmd-source-example)
-      * [item](#item-source-example)
-      * [sklt](#sklt-source-example)
-      * [arif](#arif-source-example)
-      * [memt](#memt-source-example)
-      * [fmab](#fmab-source-example)
-      * [enmp](#enmp-source-example)
-      * [fmlv](#fmlv-source-example)
-      * [lvpm](#lvpm-source-example)
-      * [lvup](#lvup-source-example)
-      * [bons](#bons-source-example)
-      * [atkp](#atkp-source-example)
-      * [przt](#przt-source-example)
-      * [magc](#magc-source-example)
-      * [limt](#limt-source-example)
-      * [vtbl](#vtbl-source-example)
-      * [btlv](#btlv-source-example)
+      * 03system
+          * [trsr](#trsr-source-example) 
+          * [cmd](#cmd-source-example)
+          * [item](#item-source-example)
+          * [sklt](#sklt-source-example)
+          * [arif](#arif-source-example)
+          * [memt](#memt-source-example)
+          * [fmab](#fmab-source-example)
+      * 00battle
+          * [enmp](#enmp-source-example)
+          * [fmlv](#fmlv-source-example)
+          * [lvpm](#lvpm-source-example)
+          * [lvup](#lvup-source-example)
+          * [bons](#bons-source-example)
+          * [atkp](#atkp-source-example)
+          * [przt](#przt-source-example)
+          * [magc](#magc-source-example)
+          * [limt](#limt-source-example)
+          * [vtbl](#vtbl-source-example)
+          * [btlv](#btlv-source-example)
       * [objentry](#objentry-source-example)
       * [libretto](#libretto-source-example)
       * [localset](#localset-source-example)
@@ -798,7 +804,7 @@ Sora:
   Unk08: 0
 ```
 
-* `synthpatch` (KH2) - Modifies Mixdata.bar, a file used for various properties related to synthesis in KH2. 
+## `synthpatch` (KH2) - Can modify the following different types of synth binaries found within mixdata:
 
  * `recipe`
  * `level`
@@ -819,7 +825,7 @@ Asset Example
         type: recipe
 ```
 
-### `recipe` Source Example
+### `reci` Source Example
 ```
 - Id: 1
   Unlock: 0
@@ -840,7 +846,7 @@ Asset Example
   Ingredient6Amount: 6
 ```
 
-### `level` Source Example
+### `leve` Source Example
 ```
 - Title: 48338 #TextID to use for Moogle Level "Title", pulls from Sys.Bar.
   Stat: 48740
@@ -849,7 +855,7 @@ Asset Example
   Exp: 0
 ```
 
-### `condition` Source Example
+### `cond` Source Example
 ```
 - TextId: 151
   RewardId: 0
