@@ -59,11 +59,10 @@ namespace OpenKh.Kh2.SystemData
             short CheckStoryFlag { get; set; }
             short CheckStoryFlagNegation { get; set; }
             short[] Members { get; set; }
-            short Unk06 { get; set; }
-            short Unk08 { get; set; }
-            short Unk0A { get; set; }
-            short Unk0C { get; set; }
-            short Unk0E { get; set; }
+            byte CheckArea { get; set; }
+            byte Padding { get; set; }
+            int PlayerSize { get; set; }
+            int FriendSize { get; set; }
             short WorldId { get; set; }
         }
 
@@ -72,11 +71,10 @@ namespace OpenKh.Kh2.SystemData
             [Data] public short WorldId { get; set; }
             [Data] public short CheckStoryFlag { get; set; }
             [Data] public short CheckStoryFlagNegation { get; set; }
-            [Data] public short Unk06 { get; set; }
-            [Data] public short Unk08 { get; set; }
-            [Data] public short Unk0A { get; set; }
-            [Data] public short Unk0C { get; set; }
-            [Data] public short Unk0E { get; set; }
+            [Data] public byte CheckArea { get; set; }
+            [Data] public byte Padding { get; set; }
+            [Data] public int PlayerSize { get; set; }
+            [Data] public int FriendSize { get; set; }
             [Data(Count = MemberCountVanilla)] public short[] Members { get; set; }
         }
 
@@ -85,11 +83,11 @@ namespace OpenKh.Kh2.SystemData
             [Data] public short WorldId { get; set; }
             [Data] public short CheckStoryFlag { get; set; }
             [Data] public short CheckStoryFlagNegation { get; set; }
-            [Data] public short Unk06 { get; set; }
-            [Data] public short Unk08 { get; set; }
-            [Data] public short Unk0A { get; set; }
-            [Data] public short Unk0C { get; set; }
-            [Data] public short Unk0E { get; set; }
+            [Data] public byte CheckArea { get; set; }
+            [Data] public byte Padding { get; set; }
+            [Data] public int PlayerSize { get; set; }
+            [Data] public int FriendSize { get; set; }
+
             [Data(Count = MemberCountFinalMix)] public short[] Members { get; set; }
         }
 
@@ -110,11 +108,10 @@ namespace OpenKh.Kh2.SystemData
             public short WorldId { get; set; }
             public short CheckStoryFlag { get; set; }
             public short CheckStoryFlagNegation { get; set; }
-            public short Unk06 { get; set; }
-            public short Unk08 { get; set; }
-            public short Unk0A { get; set; }
-            public short Unk0C { get; set; }
-            public short Unk0E { get; set; }
+            public byte CheckArea { get; set; }
+            public byte Padding { get; set; }
+            public int PlayerSize { get; set; }
+            public int FriendSize{ get; set; }
             public List<short> Members { get; set; }
         }
 
