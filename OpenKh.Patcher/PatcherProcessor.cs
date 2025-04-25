@@ -1330,13 +1330,12 @@ namespace OpenKh.Patcher
                                 memtEntry.WorldId = patch.WorldId;
                                 memtEntry.CheckStoryFlag = patch.CheckStoryFlag;
                                 memtEntry.CheckStoryFlagNegation = patch.CheckStoryFlagNegation;
-                                memtEntry.Unk06 = patch.Unk06;
-                                memtEntry.Unk08 = patch.Unk08;
-                                memtEntry.Unk0A = patch.Unk0A;
-                                memtEntry.Unk0C = patch.Unk0C;
-                                memtEntry.Unk0E = patch.Unk0E;
-                                memtEntry.Members = patch.Members.ToArray();
+                                memtEntry.CheckArea = patch.CheckArea;
+                                memtEntry.Padding = patch.Padding;
+                                memtEntry.PlayerSize = patch.PlayerSize;
+                                memtEntry.FriendSize = patch.FriendSize;
 
+                                memtEntry.Members = patch.Members.ToArray();
                                 memtEntries[patch.Index] = memtEntry;
                             }
 
