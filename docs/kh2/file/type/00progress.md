@@ -169,6 +169,8 @@ Determines the boundaries of the World Map, including the boundaries of the worl
 
 ### Entry
 
+| Offset | Type   | Description
+|--------|--------|------------
 0  | uint32 | Id
 4  | uint32 | Unknown
 8  | uint64 | VisibleGroup
@@ -189,6 +191,8 @@ World Flags. These are responsible for setting the world states for various worl
 
 ### Entry
 
+| Offset | Type   | Description
+|--------|--------|------------
 0  | uint8  | Id
 1  | uint8  | Unknown. Game uses values of 0, 1, and 2.
 2  | uint16 | Unknown
