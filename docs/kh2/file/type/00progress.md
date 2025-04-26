@@ -173,7 +173,7 @@ Each entry is 24 bytes long, but it is unknown how exactly they work.
 
 ## WLDF
 
-Purpose unknown.
+World Flags. These are responsible for setting the world states for various worlds, which unlocks them to be visitable on the world map, alongside some other functions related to the world map.
 
 ### Header
 
@@ -184,19 +184,94 @@ Purpose unknown.
 
 ### Entry
 
-0  | uint8  | Unknown
-1  | uint8  | Unknown
+0  | uint8  | Id
+1  | uint8  | Unknown. Game uses values of 0, 1, and 2.
 2  | uint16 | Unknown
-4  | uint16 | Story Flag
-6  | uint16 | Unknown
+4  | uint32 | Story Flag
 8  | uint32 | Unknown
-12 | uint32 | Pointer to another part of subfile
+12 | uint32 | Pointer to entry data within the subfile
 
 ### Pointed Area
 
-0 | uint16 | Unknown
+0 | uint16 | Opcode
 2 | uint16 | Argument count
-4 | uint16 | Arguments
+4 | uint32 | Arguments
+
+
+### Operation Codes
+
+- 0: [Terminate](#terminate)
+- 1: [Set Worldstate (0)](#set-worldstate-0)
+- 2: [Set Worldstate (1)](#set-worldstate-1)
+- 3: [Set Worldstate (2)](#set-worldstate-2)
+- 4: [Set Worldstate (2)](#set-worldstate-2)
+- 5: [Get Worldstate (2)](#get-worldstate-2)
+- 6: [Get Worldstate (1)](#get-worldstate-1)
+- 7: [Set Worldstate (3)](#set-worldstate-3)
+- 8: [Get course (0)](#get-course-0)
+- 9: [Get course (1)](#get-course-1)
+- A: [Get course (2)](#get-course-2)
+- B: [Get course (3)](#get-course-3)
+- C: [Set episode flag](#set-episode-flag)
+- D: [Reset episode new flag](#reset-episode-new-flag)
+- F: [Set darkness](#set-darkness)
+
+#### Terminate
+
+Stops the script execution.
+
+#### Set Worldstate (0)
+
+Sets the Worldstate for the given World ID to 0, meaning it is locked.
+
+#### Set Worldstate (1)
+
+Sets the Worldstate for the given World ID to 1. This gives it collision, but it remains inaccessible.
+
+#### Set Worldstate (2)
+
+Sets the Worldstate for the given World ID to 2. This unlocks the world and allows it to be traveled to.
+Opcode 3 and 4 seem extremely similar, but opcode 4 seems to use an extra bit of code that no other set worldstate uses. Unknown what difference this causes, it may be setting the world state and then forcing a certain flag off afterwards.
+
+#### Get Worldstate (2)
+
+Gets the current worldstate, and seems to do some kind of bitwise OR operation on it using a value of 2. Unknown.
+
+#### Get Worldstate (1)
+
+Gets the current worldstate, and seems to do some kind of bitwise OR operation on it using a value of 1. Unknown.
+
+#### Set Worldstate (3)
+
+Sets the Worldstate for the given World ID to 3. Unknown what this causes.
+
+#### Get course (0)
+
+Gets the Course (what the game refers to as Gummi Routes) for the given world, with a value of 0.
+
+#### Get course (1)
+
+Gets the Course (what the game refers to as Gummi Routes) for the given world, with a value of 1.
+
+#### Get course (2)
+
+Gets the Course (what the game refers to as Gummi Routes) for the given world, with a value of 2.
+
+#### Get course (3)
+
+Gets the Course (what the game refers to as Gummi Routes) for the given world, with a value of 3
+
+#### Set episode flag
+
+Sets the current episode flag for the world.
+
+#### Reset episode new flag
+
+Resets the "NEW" flag for the worlds episode.
+
+#### Set darkness
+
+Sets the current darkness entry for the worldmap.
 
 ## LINK
 
