@@ -169,7 +169,12 @@ Determines the boundaries of the World Map, including the boundaries of the worl
 
 ### Entry
 
-Each entry is 24 bytes long, but it is unknown how exactly they work.
+0  | uint32 | Id
+4  | uint32 | Unknown
+8  | uint64 | VisibleGroup
+16 | uint64 | HideGroup
+
+Each entry is 24 bytes long. The VisibleGroups & HideGroups function like the ARD command "MapVisibility", which turns on and off map groups depending on the value used in the 64-bit bitmask. The less bitmasks turned on in "VisibleGroup", the more "open" the World Map becomes, with less barriers that dictate where you're allowed to go. By the end of the game, entry 0x16 in this subfile is used, which only has one bitmask for VisibleGroup, 0x08, turned on. This will affect every room inside the worldmap.
 
 ## WLDF
 
