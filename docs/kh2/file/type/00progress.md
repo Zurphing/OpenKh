@@ -201,7 +201,8 @@ World Flags. These are responsible for setting the world states for various worl
 12 | uint32 | Pointer to entry data within the subfile
 
 ### Pointed Area
-
+| Offset | Type   | Description
+|--------|--------|------------
 0 | uint16 | Opcode
 2 | uint16 | Argument count
 4 | uint32 | Arguments
