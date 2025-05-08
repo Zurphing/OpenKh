@@ -2,7 +2,7 @@
 
 This is an essential file to boot the game engine.
 
-* [RCCT](#rcct) - ???
+* [RCCT](#rcct) - Reaction Command Count
 * [CMD](#cmd) - Commands
 * [WENT](#went) - Weapon Entities
 * [WMST](#wmst) - Weapon Movesets
@@ -14,14 +14,14 @@ This is an essential file to boot the game engine.
 * [SHOP](#shop) - Shops
 * [SKLT](#sklt) - Skeleton
 * [PREF](#pref) - Preferences
-* [EVTP](#evtp) - ???
-* [IPIC](#ipic) - ???
+* [EVTP](#evtp) - Event Type
+* [IPIC](#ipic) - Itempic Seqd
 
 ---
 
 ## Rcct
 
-Unknown table.
+Table used for keeping track of the amount of times the player has used an enemy's Reaction Command for Jiminy's Journal. The "Id" it uses to associate an RC with an enemy is the NeoStatus value of an enemy.
 
 ### Rcct Structure
 
@@ -41,12 +41,12 @@ Unknown table.
 
 | Offset | Variable Type | Description |
 |--------|---------------|-------------|
-| 0 	 | short | Unk0
-| 2 	 | short | Unk2
-| 4 	 | short | Unk4
-| 6 	 | short | Unk6
-| 8 	 | short | Unk8
-| 10 	 | short | Unk10 (Padding?)
+| 0 	 | short | NeoStatus
+| 2 	 | short | Command1 Id
+| 4 	 | short | Command2 Id
+| 6 	 | short | Command3 Id
+| 8 	 | short | Command4 Id
+| 10 	 | short | Command5 Id
 
 ---
 
@@ -746,7 +746,7 @@ Documented in [preferences.md](./preferences.md).
 
 ## Evtp
 
-Unknown.
+Event Type. Defines parameters for the different types of fades the cutscenes use in-game.
 
 ### Evtp Structure
 
@@ -767,12 +767,24 @@ Unknown.
 | Offset | Variable Type | Description |
 |--------|---------------|-------------|
 | 0 	 | byte | Id
-| 1 	 | short | Unk2
-| 3 	 | byte[3] | Padding?
-| 6 	 | short | Unk6
+| 1 	 | byte | [Fade-Type](#fade-type)
+| 2 	 | byte | Byte Bitmask
+| 3      | byte | Padding
+| 4 	 | float | Fade-Duration
+
+#### Fade-Type
+
+| Id | Description |
+|----|-------------|
+| 0 | No fade effect
+| 1 | Fade from Black
+| 2 | Fade from White
+| 3 | Use KeyHole Jump Effect
+
+The specifics of the byte bitmask are currently unknown. However, they seem to be able to control whether a cutscene is 60fps, and if pausing the cutscene will let you skip the cutscene.
 
 ---
 
 ## Ipic
 
-Unknown.
+A SEQD file used when popping up an "Obtained Item" in the top-left corner after opening a chest.
