@@ -1,6 +1,6 @@
 # [Kingdom Hearts II](../../index.md) - 00objentry.bin
 
-Contains a definition of every object and it's parameters.
+Contains a definition of every object and it's parameters. Objects must go in order of ID (ex. 1, 2, 3, then 4) otherwise the game will freeze when attempting to load an object that is out of order.
 
 ## Structure
 
