@@ -40,14 +40,14 @@ Contains a definition of every object and it's parameters.
 | 0x05 | WEAPON   | Weapon
 | 0x06 | E_WEAPON | Placeholders for ARD files
 | 0x07 | SP       | World/Save Point
-| 0x08 | F_OBJ    | Neutral (can be damaged by both allies and enemies)
+| 0x08 | F_OBJ    | Field Object (neutral, can be damaged by both allies and enemies)
 | 0x09 | BTLNPC   | Partner (out of party allies)
 | 0x0A | TREASURE | Chest
 | 0x0B | SUBMENU  | Moogle
 | 0x0C | L_BOSS   | Large Boss
-| 0x0D | G_OBJ    | Unknown
+| 0x0D | G_OBJ    | Gimmick Object
 | 0x0E | MEMO     | Pause Menu Dummy (walking models in Pause Menu)
-| 0x0F | RTN      | Unknown
+| 0x0F | RTN      | Reaction (NPCs you can talk to with a reaction command)
 | 0x10 | MINIGAME | Unknown
 | 0x11 | WORLDMAP | Objects on the World Map
 | 0x12 | PRIZEBOX | Drop Item Container
@@ -55,21 +55,21 @@ Contains a definition of every object and it's parameters.
 | 0x14 | SHOP     | Shop Point
 | 0x15 | L_ZAKO   | Normal Enemy
 | 0x16 | MASSEFFECT | Crowd Spawner
-| 0x17 | E_OBJ    | Unknown
+| 0x17 | E_OBJ    | Enemy Object
 | 0x18 | JIGSAW   | Puzzle Piece
 
 ### Flags
 
-| Position | Size | Description |
-|----------|------|-------------|
-| 0 | 1 | No APDX
-| 1 | 1 | Before
-| 2 | 1 | Fix Color
-| 3 | 1 | Fly
-| 4 | 1 | Scissoring
-| 5 | 1 | Pirate
-| 6 | 1 | OCC Wall
-| 7 | 1 | Hift
+| Position | Size | Name | Description |
+|----------|------|------|------------- |
+| 0 | 1 | No APDX | Does not use an a.xx file
+| 1 | 1 | Before | ???
+| 2 | 1 | Fix Color | Unaffected by a maps FogColor lighting 
+| 3 | 1 | Fly | ???
+| 4 | 1 | Scissoring | Affects how it interacts with models that collide with it
+| 5 | 1 | Pirate | ???
+| 6 | 1 | OCC Wall | ???
+| 7 | 1 | Hift | ???
 
 ### Target Type
 
