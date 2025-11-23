@@ -16,10 +16,10 @@ Contains a definition of every object and it's parameters. Objects must go in or
 | 0x48   | uint16 | [Flags](#flags)
 | 0x4A   | uint8 | [Target Type](#target-type)
 | 0x4B   | uint8 | Padding
-| 0x4C   | uint16 | Neo Status
-| 0x4E   | uint16 | Neo Moveset
+| 0x4C   | uint16 | Neo Status (Internally known as Part)
+| 0x4E   | uint16 | Neo Moveset (Internally known as WeaponPart)
 | 0x50   | float | Weight
-| 0x54   | uint8 | Spawn Limiter
+| 0x54   | uint8 | Spawn Limiter (Internally known as Cost)
 | 0x55   | uint8 | Page (unknown)
 | 0x56   | uint8 | [Shadow Size](#shadow-size)
 | 0x57   | uint8 | [Form](#form-fm)
