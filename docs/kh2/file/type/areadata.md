@@ -342,12 +342,13 @@ Set the memory area `0034ecd4`, which is related to the amount of memory reserve
 
 Set the memory area `0034ece8`, which sets the camera mode for the map with the first 4-byte parameter. It has a parameter of `1` or `2`. Found 39 times and only in `map` for `hb17`, `lk13`, `mu07` and `po00`.
 
-| Value | Description   
-|-------|---------------
-| 0     | Default Camera     
-| 1     | Locked overhead camera, like in po00. Press Select to get an overhead view.       
-| 2     | Indoor type camera. Lower FoV and restricted Y-axis.
-| 3     | Left stick controls X-axis of the camera
+| Value | Internal Name | Description   
+|-------|---------------|---------------
+| 0     | CAMERA_NORMAL     | Default Camera     
+| 1     | CAMERA_BOOK       | Locked overhead camera, like in po00. Press Select to get an overhead view.       
+| 2     | CAMERA_CROWD      | Indoor type camera. Lower FoV and restricted Y-axis.
+| 3     | CAMERA_LIGHTCYCLE | Left stick controls X-axis of the camera
+| 4     | CAMERA_WORLDMAP   | Camera style used on the World Map
 
 #### StatusFlag3
 
@@ -389,14 +390,20 @@ Conditionals for the script based on the entrance. Used most often in the Colise
 
 Determines Sora and the party's stats upon entering the room. The game will only check if Sora is using a form or summon when entering a room. Healing will refill items and reverting will refill Sora's drive gauge.
 
-| Value | Description
-|-------|-------------
-| 1     | Heal party and revert Sora if he's using a form or summon.
-| 2     | Heal party and revert Sora.
-| 3     | Heal party.
-| 4     | Revert Sora if he's using a form or summon.
-| 5     | Revert Sora if he's using a form or summon and lock his drive gauge.
-| 6     | Revert Sora.
+| Value | Internal Name | Description
+|-------|---------------|-------------
+| 1      | TYPE_CHANGE_MEMBER   | Heal party and revert Sora if he's using a form or summon.
+| 2      | TYPE_WORLD           | Heal party and revert Sora.
+| 3      | TYPE_REST            | Heal party.
+| 4      | TYPE_DRIVE_CANCEL    | Revert Sora if he's using a form or summon.
+| 5      | TYPE_HE_CURSE        | Revert Sora if he's using a form or summon and lock his drive gauge.
+| 6      | TYPE_DRIVE_RESET     | ?
+| 7      | TYPE_SAVEPOINT       | ?
+| 8      | TYPE_CONTINUE        | ?
+| 9      | TYPE_MINIGAME        | ?
+| 10     | TYPE_HOLYLIGHT       | ?
+| 11     | TYPE_ANTI_CANCEL     | ?
+| 12     | TYPE_COLOSSEUM_START | ?
 
 #### BattleLevel
 
