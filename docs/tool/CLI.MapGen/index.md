@@ -15,6 +15,7 @@ TOC
   - [imgtoolOptions](#imgtooloptions)
   - [textureOptions](#textureoptions)
   - [uvscList](#uvsclist)
+  - [isWrappedCollision](#iswrappedcollision)
   - [disableTriangleStripsOptimization](#disabletrianglestripsoptimization)
   - [disableBSPCollisionBuilder](#disablebspcollisionbuilder)
   - [disableBSPCollisionBuilder2](#disablebspcollisionbuilder2)
@@ -209,14 +210,27 @@ textureOptions:
 ### uvscList
 ```yml
 # Values to use to control the speed of horizontal and vertical UV scrolling.
-# Mapgen doesn't seem to append these values, so they'll need to be added manually.
-# Additionally, looping will need to be fixed in the GSInfo portion of the texture that has UV Scrolling.
-# The 129th-132nd bytes in that texture control this.
+# This modifies the 129th-132nd bytes in the GSInfo for that texture.
 uvscList:
   - index: 0
     u: 64000000
     v: 64000000
 ```
+
+### iswrappedcollision
+```yml
+# Generates collision for use within an APDX file. Useful for giving collision to additional map objects like crates, barrels, etc.
+# Collision is generated with the same generator used for "disableBSPCollisionBuilder"
+isWrappedCollision: true
+# If you've exported an FBX used for creating a model with KH2MDLXEditor, ensure you also apply the following matrix on that FBX in order to generated the collision properly oriented.
+applyMatrix: [
+    1,  0,  0,  0,
+    0,  0,  -1,  0,
+    0, 1,  0,  0,
+    0,  0,  0,  1
+]
+```
+
 
 ### disableTriangleStripsOptimization
 
@@ -674,4 +688,5 @@ eachFileName:
   and then export entire world to `.fbx` file format.
 - Ideally, you'll want to generate the regular map model without collision, then create a lower-poly collision mesh, where you select specific vertices and define each set as materials as needed.
 - _Note :_ The Y coordinate is up vector in KH2.
+
 
