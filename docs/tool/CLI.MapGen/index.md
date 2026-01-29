@@ -219,10 +219,11 @@ uvscList:
 
 ### iswrappedcollision
 ```yml
-# Generates collision for use within an APDX file. Useful for giving collision to additional map objects like crates, barrels, etc.
+# Generates collision for use within an APDX file.
+# Useful for giving collision to additional map objects like crates, barrels, etc.
 # Collision is generated with the same generator used for "disableBSPCollisionBuilder"
 isWrappedCollision: true
-# If you've exported an FBX used for creating a model with KH2MDLXEditor, ensure you also apply the following matrix on that FBX in order to generated the collision properly oriented.
+# If you've exported an FBX used for creating a model with KH2MDLXEditor, also apply the following matrix:
 applyMatrix: [
     1,  0,  0,  0,
     0,  0,  -1,  0,
@@ -688,5 +689,6 @@ eachFileName:
   and then export entire world to `.fbx` file format.
 - Ideally, you'll want to generate the regular map model without collision, then create a lower-poly collision mesh, where you select specific vertices and define each set as materials as needed.
 - _Note :_ The Y coordinate is up vector in KH2.
+
 
 
