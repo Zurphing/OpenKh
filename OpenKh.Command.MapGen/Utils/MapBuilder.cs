@@ -260,6 +260,29 @@ namespace OpenKh.Command.MapGen.Utils
                             .Where(it => !it.matDef.noclip)
                     )
                         .GetBuilt();
+                    if (config.isWrappedCollision)
+                    {
+                        logger.Debug("Wrapping player COCT.");
+
+                        // Serialize COCT
+                        var coctBin = new MemoryStream();
+                        it.Coct.Write(coctBin);
+                        coctBin.Position = 0;
+
+                        // Build wrapped stream
+                        var wrapped = new MemoryStream();
+                        using (var bw = new BinaryWriter(wrapped, System.Text.Encoding.Default, leaveOpen: true))
+                        {
+                            bw.Write(1u);        // Magic
+                            bw.Write(1u);        // Entry count
+                            bw.Write(16384u);    // Bone ID
+                            bw.Write(0x10u);     // Offset to COCT
+                            bw.Write(coctBin.ToArray());
+                        }
+
+                        wrapped.Position = 0;
+                        it.WrappedStream = wrapped;
+                    }
 
                     PrintFinished(it.Coct);
                 }
@@ -878,21 +901,33 @@ namespace OpenKh.Command.MapGen.Utils
             {
                 if (playerCollision.IsValid)
                 {
-                    var coctBin = new MemoryStream();
-                    playerCollision.Coct.Write(coctBin);
-                    coctBin.Position = 0;
+                    MemoryStream stream;
+
+                    if (playerCollision.WrappedStream != null)
+                    {
+                        stream = playerCollision.WrappedStream;
+                        stream.Position = 0;
+                    }
+                    else
+                    {
+                        var coctBin = new MemoryStream();
+                        playerCollision.Coct.Write(coctBin);
+                        coctBin.Position = 0;
+                        stream = coctBin;
+                    }
 
                     entries.Add(
                         new Bar.Entry
                         {
                             Name = config.bar?.coct?.name ?? "ID_e",
                             Type = Bar.EntryType.CollisionOctalTree,
-                            Stream = coctBin,
+                            Stream = stream,
                         }
                     );
 
-                    trySaveTo?.Invoke(config.bar?.coct?.toFile, coctBin);
+                    trySaveTo?.Invoke(config.bar?.coct?.toFile, stream);
                 }
+
 
                 if (cameraCollision.IsValid)
                 {
@@ -954,3 +989,4 @@ namespace OpenKh.Command.MapGen.Utils
 
     }
 }
+
