@@ -119,5 +119,7 @@ namespace OpenKh.Command.MapGen.Models
         public uint bgColor { get; set; } = DefaultBgColor;
 
         public uint[] onColorTable { get; set; }
+
+        public bool isWrappedCollision { get; set; }
     }
 }
