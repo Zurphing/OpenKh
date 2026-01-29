@@ -5,6 +5,8 @@ namespace OpenKh.Command.MapGen.Utils
     public class CollisionBuilt
     {
         public Coct Coct { get; set; }
+        public MemoryStream WrappedStream { get; set; }
         public bool IsValid { get; set; }
     }
 }
+
