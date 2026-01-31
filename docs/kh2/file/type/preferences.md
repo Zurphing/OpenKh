@@ -250,6 +250,9 @@ Each pointer leads to a specific entry's offset.
 ### Magi Entry
 
 \* NOTE: Each entry is 124 bytes long, so the info for the fields is wrong somewhere.
+\* Based on the BDX file each Magic type uses, it appears the fields for Thunder are the cause of this.
+\* Fire uses from 0 to 8, Blizzard from 12 to 28, Thunder only uses 32 to 52, Cure uses 56, Magnet uses from 60 to 76, and Reflect uses 80 to 120.
+\* Additionally, each applicable Form (Base, Wisdom, Master, Final) has a total of 6 entries. Each tier of magic has two entries, one for the "Combo" version, and one for the "Finisher" version.
 
 | Offset | Variable Type | Description |
 |--------|---------------|-------------|
