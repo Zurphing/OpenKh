@@ -444,8 +444,8 @@ Every table has the following header
 | Offset | Type | Description |
 |--------|------|-------------|
 | 4 | uint16 | Id
-| 6 | uint8 | Ap
-| 7 | uint8 | Type
+| 6 | uint8 | Type
+| 7 | uint8 | Ap
 
 #### Consumables
 
